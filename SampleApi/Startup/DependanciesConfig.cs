@@ -8,6 +8,7 @@ namespace SampleApi.Startup
         {
             // Add any dependencies here
             builder.Services.AddOpenApiServices();
+            builder.Services.AddCorsServices();
             builder.Services.AddTransient<CourseData>();
         }
         
