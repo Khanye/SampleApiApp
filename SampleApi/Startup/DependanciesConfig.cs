@@ -1,15 +1,14 @@
-﻿namespace SampleApi.Startup
+﻿ using SampleApi.Data;
+
+namespace SampleApi.Startup
 {
     public static class DependanciesConfig
     {
         public static void AddDependancies(this WebApplicationBuilder builder)
         {
             // Add any dependencies here
-            // For example, if you have a database context or a service, you can add it like this:
-            // services.AddDbContext<MyDbContext>(options => options.UseSqlServer("YourConnectionString"));
-            // services.AddScoped<IMyService, MyService>();
-
             builder.Services.AddOpenApiServices();
+            builder.Services.AddTransient<CourseData>();
         }
         
         public static void UseDependancies(this WebApplication app)
